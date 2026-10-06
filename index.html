@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>USM — Take Vision</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 6px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(70px, 18vw, 220px);
+      letter-spacing: 20px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 14px;
+      letter-spacing: 8px;
+      color: #aaa;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 45px;
+      padding: 16px 35px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 3px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .collection {
+      min-height: 60vh;
+      padding: 100px 6%;
+      border-top: 1px solid #222;
+    }
+
+    .collection h2 {
+      font-size: 35px;
+      letter-spacing: 5px;
+      margin-bottom: 60px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      height: 350px;
+      border: 1px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      letter-spacing: 4px;
+    }
+
+    footer {
+      padding: 50px 6%;
+      border-top: 1px solid #222;
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: 8px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">USM</div>
+
+    <div>
+      <a href="#collection">COLLECTION</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>USM</h1>
+      <p>TAKE VISION</p>
+
+      <a href="#collection" class="button">
+        EXPLORE
+      </a>
+    </div>
+  </section>
+
+  <section class="collection" id="collection">
+    <h2>COLLECTION</h2>
+
+    <div class="products">
+      <div class="product">PRODUCT 01</div>
+      <div class="product">PRODUCT 02</div>
+      <div class="product">PRODUCT 03</div>
+      <div class="product">PRODUCT 04</div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    USM — TAKE VISION
+  </footer>
+
+</body>
+</html>
