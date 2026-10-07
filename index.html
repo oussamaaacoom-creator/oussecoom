@@ -1,208 +1,810 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>USM — Take Vision</title>
+<title>USM — Take Vision</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#05080b;
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* HEADER */
+
+header{
+    height:88px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    background:#05080b;
+    position:relative;
+    z-index:10;
+}
+
+.menu{
+    font-size:28px;
+    cursor:pointer;
+}
+
+.logo{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+}
+
+.logo-crown{
+    font-size:20px;
+    display:block;
+    margin-bottom:-4px;
+}
+
+.logo h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    font-weight:500;
+    letter-spacing:2px;
+}
+
+.logo-line{
+    width:65px;
+    height:2px;
+    background:#53c8ff;
+    margin:0 auto;
+}
+
+.header-right{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    font-size:24px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    padding:70px 8%;
+    background:
+    linear-gradient(90deg,rgba(3,8,12,.98) 0%,rgba(3,8,12,.75) 45%,rgba(3,8,12,.15)),
+    url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.hero-content{
+    max-width:550px;
+}
+
+.small-title{
+    color:#66d2ff;
+    letter-spacing:4px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.small-title::after{
+    content:"";
+    display:inline-block;
+    width:38px;
+    height:2px;
+    background:#66d2ff;
+    margin-left:12px;
+    vertical-align:middle;
+}
+
+.hero h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.hero p{
+    letter-spacing:5px;
+    font-size:12px;
+    color:#ddd;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    border:1px solid #66d2ff;
+    padding:15px 24px;
+    font-size:12px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#66d2ff;
+    color:#000;
+}
+
+.dots{
+    margin-top:35px;
+    display:flex;
+    gap:12px;
+}
+
+.dot{
+    width:22px;
+    height:6px;
+    background:#777;
+    border-radius:5px;
+}
+
+.dot.active{
+    background:#3dc4ff;
+}
+
+/* SECOND BANNER */
+
+.banner{
+    min-height:360px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding:50px 8%;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.05),rgba(0,0,0,.88)),
+    url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.banner-content{
+    max-width:480px;
+}
+
+.banner h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    margin:12px 0;
+}
+
+.banner p{
+    letter-spacing:4px;
+    font-size:11px;
+    margin-bottom:30px;
+}
+
+/* CATEGORIES */
+
+.categories{
+    padding:75px 6%;
+    background:#05090d;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:#65d1ff;
+    letter-spacing:4px;
+    font-size:11px;
+}
+
+.section-title h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    font-weight:500;
+    margin-top:10px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card{
+    min-height:350px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:12px;
+    background-size:cover;
+    background-position:center;
+}
+
+.card:first-child{
+    background-image:
+    linear-gradient(0deg,rgba(0,0,0,.9),transparent 60%),
+    url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85');
+}
+
+.card:last-child{
+    background-image:
+    linear-gradient(0deg,rgba(0,0,0,.9),transparent 60%),
+    url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=85');
+}
+
+.card-content{
+    position:absolute;
+    left:28px;
+    right:28px;
+    bottom:25px;
+}
+
+.card-icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    font-weight:500;
+}
+
+.card p{
+    color:#bbb;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.card-arrow{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:38px;
+    height:38px;
+    border:1px solid #65d1ff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#65d1ff;
+}
+
+/* ABOUT */
+
+.about{
+    padding:70px 8%;
+    background:
+    linear-gradient(90deg,rgba(2,9,14,.92),rgba(2,9,14,.65)),
+    url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=80')
+    center/cover;
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:70px;
+}
+
+.about-logo small{
+    display:block;
+    font-family:'Montserrat',sans-serif;
+    font-size:11px;
+    letter-spacing:5px;
+    color:#ccc;
+    margin-top:10px;
+}
+
+.about-text{
+    border-left:1px solid rgba(255,255,255,.3);
+    padding-left:40px;
+}
+
+.about-text p{
+    color:#ccc;
+    line-height:1.9;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* FEATURES */
+
+.features{
+    padding:35px 6%;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.feature{
+    text-align:center;
+    padding:15px;
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.feature:last-child{
+    border-right:none;
+}
+
+.feature-icon{
+    font-size:28px;
+    color:#65d1ff;
+    margin-bottom:10px;
+}
+
+.feature h4{
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.feature p{
+    font-size:10px;
+    color:#888;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:45px 6%;
+}
+
+.contact-title{
+    text-align:center;
+    letter-spacing:5px;
+    font-size:11px;
+    color:#aaa;
+    margin-bottom:30px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 20px;
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.contact-item:last-child{
+    border:none;
+}
+
+.contact-icon{
+    font-size:25px;
+    color:#65d1ff;
+}
+
+.contact-item h4{
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+.contact-item p{
+    font-size:11px;
+    color:#999;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.15);
+    padding:25px 6%;
+    display:flex;
+    justify-content:space-between;
+    color:#777;
+    font-size:10px;
+}
+
+.footer-logo{
+    color:white;
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:58px;
+    height:58px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 0 25px rgba(37,211,102,.5);
+    z-index:100;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        height:78px;
+        padding:0 22px;
     }
 
-    body {
-      background: #000;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
+    .logo h1{
+        font-size:38px;
     }
 
-    nav {
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6%;
-      border-bottom: 1px solid #222;
+    .header-right{
+        gap:14px;
+        font-size:21px;
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 6px;
+    .hero{
+        min-height:470px;
+        padding:45px 25px;
+        background-position:center;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 30px;
-      font-size: 13px;
-      letter-spacing: 2px;
+    .hero h2{
+        font-size:48px;
     }
 
-    .hero {
-      min-height: calc(100vh - 80px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
+    .hero p{
+        font-size:9px;
+        letter-spacing:3px;
     }
 
-    .hero h1 {
-      font-size: clamp(70px, 18vw, 220px);
-      letter-spacing: 20px;
-      font-weight: 900;
+    .banner{
+        min-height:350px;
+        padding:40px 25px;
     }
 
-    .hero p {
-      margin-top: 20px;
-      font-size: 14px;
-      letter-spacing: 8px;
-      color: #aaa;
+    .banner-content{
+        max-width:300px;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 45px;
-      padding: 16px 35px;
-      border: 1px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 3px;
-      transition: 0.3s;
+    .banner h2{
+        font-size:40px;
     }
 
-    .button:hover {
-      background: #fff;
-      color: #000;
+    .categories{
+        padding:55px 18px;
     }
 
-    .collection {
-      min-height: 60vh;
-      padding: 100px 6%;
-      border-top: 1px solid #222;
+    .section-title h2{
+        font-size:40px;
     }
 
-    .collection h2 {
-      font-size: 35px;
-      letter-spacing: 5px;
-      margin-bottom: 60px;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+    .card{
+        min-height:300px;
     }
 
-    .product {
-      height: 350px;
-      border: 1px solid #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #555;
-      letter-spacing: 4px;
+    .about{
+        grid-template-columns:1fr;
+        padding:55px 25px;
+        gap:30px;
     }
 
-    footer {
-      padding: 50px 6%;
-      border-top: 1px solid #222;
-      text-align: center;
-      color: #666;
-      font-size: 12px;
-      letter-spacing: 3px;
+    .about-logo{
+        font-size:58px;
     }
 
-    @media (max-width: 600px) {
-      nav a {
-        display: none;
-      }
-
-      .hero h1 {
-        letter-spacing: 8px;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-      }
+    .about-text{
+        border-left:none;
+        border-top:1px solid rgba(255,255,255,.3);
+        padding:25px 0 0;
     }
-  </style>
+
+    .features{
+        grid-template-columns:1fr 1fr;
+        padding:20px 10px;
+    }
+
+    .feature{
+        border-right:1px solid rgba(255,255,255,.15);
+        border-bottom:1px solid rgba(255,255,255,.15);
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-item{
+        padding:18px 10px;
+        border-bottom:1px solid rgba(255,255,255,.15);
+    }
+
+    .contact-item:nth-child(2){
+        border-right:none;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="logo">USM</div>
+<header>
 
-    <div>
-      <a href="#collection">COLLECTION</a>
-      <a href="#contact">CONTACT</a>
+    <div class="menu">☰</div>
+
+    <div class="logo">
+        <span class="logo-crown">♛</span>
+        <h1>USM</h1>
+        <div class="logo-line"></div>
     </div>
-  </nav>
 
-  <section class="hero">
-    <div>
-      <h1>USM</h1>
-      <p>TAKE VISION</p>
-
-      <a href="#collection" class="button">
-        EXPLORE
-      </a>
+    <div class="header-right">
+        <span>⌕</span>
+        <span>♧</span>
     </div>
-  </section>
 
-  <section class="collection" id="collection">
-    <h2>COLLECTION</h2>
+</header>
 
-    <div class="products">
-      <div class="product">PRODUCT 01</div>
-      <div class="product">PRODUCT 02</div>
-      <div class="product">PRODUCT 03</div>
-      <div class="product">PRODUCT 04</div>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">USM</div>
+
+        <h2>Montres Homme</h2>
+
+        <p>ÉLÉGANCE • PRÉCISION • STYLE</p>
+
+        <a href="#categories" class="btn">
+            DÉCOUVRIR →
+        </a>
+
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
     </div>
-  </section>
-
-  <footer id="contact">
-    USM — TAKE VISION
-  </footer>
-  <!-- CONTACT SECTION -->
-<section id="contact" style="padding:80px 20px; text-align:center; background:#000; color:#fff;">
-
-  <h2 style="font-size:40px; letter-spacing:4px; margin-bottom:15px;">
-    CONTACT
-  </h2>
-
-  <p style="color:#aaa; margin-bottom:35px;">
-    For orders, questions or collaborations
-  </p>
-
-  <a href="https://wa.me/212601109225"
-     target="_blank"
-     style="display:inline-block; padding:15px 30px; margin:8px;
-            border:1px solid #fff; color:#fff; text-decoration:none;
-            letter-spacing:2px;">
-    WHATSAPP
-  </a>
-
-  <a href="tel:+212601109225"
-     style="display:inline-block; padding:15px 30px; margin:8px;
-            border:1px solid #fff; color:#fff; text-decoration:none;
-            letter-spacing:2px;">
-    CALL US
-  </a>
-
-  <p style="margin-top:40px; color:#777;">
-    +212 6 01 10 92 25
-  </p>
 
 </section>
-  
-</body>
-  </html>
+
+
+<section class="banner">
+
+    <div class="banner-content">
+
+        <div class="small-title">USM</div>
+
+        <h2>Accessoires Femmes</h2>
+
+        <p>ÉLÉGANCE • FÉMINITÉ • DÉTAILS</p>
+
+        <a href="#categories" class="btn">
+            DÉCOUVRIR →
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="categories" id="categories">
+
+    <div class="section-title">
+        <span>CATÉGORIES</span>
+        <h2>— &nbsp; Nos Catégories &nbsp; —</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-content">
+
+                <div class="card-icon">⌚</div>
+
+                <h3>Montres Hommes</h3>
+
+                <p>Voir tout →</p>
+
+                <div class="card-arrow">→</div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-content">
+
+                <div class="card-icon">◇</div>
+
+                <h3>Accessoires Femmes</h3>
+
+                <p>Voir tout →</p>
+
+                <div class="card-arrow">→</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about">
+
+    <div>
+
+        <div class="about-logo">
+            ♛<br>USM
+
+            <small>
+                PLUS QU'UN STYLE,<br>
+                UNE IDENTITÉ.
+            </small>
+        </div>
+
+    </div>
+
+
+    <div class="about-text">
+
+        <p>
+            USM est une marque qui incarne l'élégance,
+            la qualité et le style moderne.
+            Nous sélectionnons pour vous des pièces
+            uniques, pensées pour ceux qui aiment
+            se démarquer au quotidien.
+        </p>
+
+        <a href="#" class="btn">
+            EN SAVOIR PLUS →
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">♢</div>
+        <h4>Produits de qualité</h4>
+        <p>Sélectionnés avec soin</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">▣</div>
+        <h4>Livraison rapide</h4>
+        <p>Partout au Maroc</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">♧</div>
+        <h4>Service client</h4>
+        <p>Toujours à votre écoute</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">♙</div>
+        <h4>Paiement sécurisé</h4>
+        <p>100% fiable</p>
+    </div>
+
+</section>
+
+
+<section class="contact">
+
+    <div class="contact-title">
+        CONTACT
+    </div>
+
+    <div class="contact-grid">
+
+
+        <a class="contact-item" href="#">
+            <div class="contact-icon">◎</div>
+            <div>
+                <h4>Instagram</h4>
+                <p>@usm.officiel</p>
+            </div>
+        </a>
+
+
+        <a class="contact-item"
+           href="https://wa.me/212601109225"
+           target="_blank">
+
+            <div class="contact-icon">◉</div>
+
+            <div>
+                <h4>WhatsApp</h4>
+                <p>+212 601 109 225</p>
+            </div>
+
+        </a>
+
+
+        <a class="contact-item"
+           href="mailto:usm@email.com">
+
+            <div class="contact-icon">✉</div>
+
+            <div>
+                <h4>Email</h4>
+                <p>usm@email.com</p>
+            </div>
+
+        </a>
+
+
+        <div class="contact-item">
+
+            <div class="contact-icon">⌖</div>
+
+            <div>
+                <h4>Localisation</h4>
+                <p>Agadir, Maroc</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-logo">USM</div>
+
+    <div>
+        © 2026 USM. Tous droits réservés.
+    </div>
+
+    <div>
+        Mentions légales &nbsp; | &nbsp;
+        Politique de confidentialité
+    </div>
+
+</footer>
+
+
+<a class="whatsapp"
+   href="https://wa.me/212601109225"
+   target="_blank">
+    ☎
+</a>
+
+
 </body>
 </html>
