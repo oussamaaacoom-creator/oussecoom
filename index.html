@@ -1,819 +1,807 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
+
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>USM — Take Vision</title>
+<title>USSECOOM | L'élégance au quotidien</title>
+
+<meta name="description" content="Découvrez la collection de montres USSECOOM. Livraison gratuite partout au Maroc.">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+
+  --cream: #f7f4ed;
+
+  --white: #fffefa;
+
+  --black: #181818;
+
+  --gold: #b39a65;
+
+  --muted: #77736b;
+
 }
 
-body{
-    background:#05080b;
-    color:#fff;
-    font-family:'Montserrat',sans-serif;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+
+  background: var(--cream);
+
+  color: var(--black);
+
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+
+  background: var(--black);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 10px;
+
+  font-size: 12px;
+
+  letter-spacing: 1.5px;
+
 }
 
-/* HEADER */
+header {
 
-header{
-    height:88px;
-    border-bottom:1px solid rgba(255,255,255,.15);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 6%;
-    background:#05080b;
-    position:relative;
-    z-index:10;
+  min-height: 78px;
+
+  padding: 18px 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: var(--white);
+
+  border-bottom: 1px solid #e8e2d7;
+
 }
 
-.menu{
-    font-size:28px;
-    cursor:pointer;
+.logo {
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
 }
 
-.logo{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    text-align:center;
+.logo span { color: var(--gold); }
+
+nav { display: flex; gap: 25px; font-size: 13px; }
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+
+  padding: 65px 7%;
+
+  min-height: 440px;
+
+  display: grid;
+
+  grid-template-columns: 1.1fr .9fr;
+
+  align-items: center;
+
+  gap: 35px;
+
+  background: var(--cream);
+
 }
 
-.logo-crown{
-    font-size:20px;
-    display:block;
-    margin-bottom:-4px;
+.eyebrow {
+
+  color: var(--gold);
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  font-size: 11px;
+
+  margin-bottom: 20px;
+
 }
 
-.logo h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:48px;
-    font-weight:500;
-    letter-spacing:2px;
+.hero h1 {
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(40px, 5vw, 68px);
+
+  line-height: 1.08;
+
+  font-weight: normal;
+
+  margin-bottom: 22px;
+
 }
 
-.logo-line{
-    width:65px;
-    height:2px;
-    background:#53c8ff;
-    margin:0 auto;
+.hero h1 em { color: var(--gold); }
+
+.hero p {
+
+  color: var(--muted);
+
+  line-height: 1.8;
+
+  max-width: 450px;
+
+  font-size: 15px;
+
 }
 
-.header-right{
-    display:flex;
-    gap:25px;
-    align-items:center;
-    font-size:24px;
+.btn {
+
+  display: inline-block;
+
+  padding: 15px 25px;
+
+  margin-top: 27px;
+
+  background: var(--black);
+
+  color: white;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  transition: .2s;
+
 }
 
-/* HERO */
+.btn:hover { background: var(--gold); }
 
-.hero{
-    min-height:520px;
-    display:flex;
-    align-items:center;
-    padding:70px 8%;
-    background:
-    linear-gradient(90deg,rgba(3,8,12,.98) 0%,rgba(3,8,12,.75) 45%,rgba(3,8,12,.15)),
-    url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1800&q=85')
-    center/cover;
+.hero-art {
+
+  min-height: 300px;
+
+  background: #ebe5d9;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 25px;
+
+  text-align: center;
+
 }
 
-.hero-content{
-    max-width:550px;
+.hero-art .monogram {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(65px, 10vw, 125px);
+
+  color: #c5b28c;
+
+  border: 1px solid #c5b28c;
+
+  padding: 25px;
+
 }
 
-.small-title{
-    color:#66d2ff;
-    letter-spacing:4px;
-    font-size:13px;
-    margin-bottom:20px;
+.benefits {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  background: var(--white);
+
+  border-top: 1px solid #e8e2d7;
+
+  border-bottom: 1px solid #e8e2d7;
+
 }
 
-.small-title::after{
-    content:"";
-    display:inline-block;
-    width:38px;
-    height:2px;
-    background:#66d2ff;
-    margin-left:12px;
-    vertical-align:middle;
+.benefit {
+
+  padding: 24px 10px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  letter-spacing: .5px;
+
 }
 
-.hero h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:65px;
-    font-weight:500;
-    margin-bottom:12px;
+.benefit strong {
+
+  display: block;
+
+  font-size: 13px;
+
+  margin-bottom: 7px;
+
 }
 
-.hero p{
-    letter-spacing:5px;
-    font-size:12px;
-    color:#ddd;
-    margin-bottom:35px;
+section.products {
+
+  padding: 75px 7%;
+
 }
 
-.btn{
-    display:inline-block;
-    border:1px solid #66d2ff;
-    padding:15px 24px;
-    font-size:12px;
-    letter-spacing:2px;
-    transition:.3s;
+.section-head { text-align: center; margin-bottom: 38px; }
+
+.section-head .eyebrow { margin-bottom: 12px; }
+
+.section-head h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(30px, 4vw, 42px);
+
+  font-weight: normal;
+
 }
 
-.btn:hover{
-    background:#66d2ff;
-    color:#000;
+.section-head p { color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+.product-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+
 }
 
-.dots{
-    margin-top:35px;
-    display:flex;
-    gap:12px;
+.product-card {
+
+  background: var(--white);
+
+  border: 1px solid #e9e4da;
+
+  overflow: hidden;
+
 }
 
-.dot{
-    width:22px;
-    height:6px;
-    background:#777;
-    border-radius:5px;
+.product-image {
+
+  height: 250px;
+
+  background: #eee9df;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
 }
 
-.dot.active{
-    background:#3dc4ff;
+.product-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 15px;
+
+  transition: transform .3s;
+
 }
 
-/* SECOND BANNER */
+.product-card:hover .product-image img { transform: scale(1.04); }
 
-.banner{
-    min-height:360px;
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    padding:50px 8%;
-    background:
-    linear-gradient(90deg,rgba(0,0,0,.05),rgba(0,0,0,.88)),
-    url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=85')
-    center/cover;
+.image-placeholder {
+
+  text-align: center;
+
+  color: #8d816b;
+
+  padding: 20px;
+
+  font-family: Georgia, serif;
+
 }
 
-.banner-content{
-    max-width:480px;
+.image-placeholder span {
+
+  display: block;
+
+  font-size: 48px;
+
+  margin-bottom: 10px;
+
 }
 
-.banner h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:48px;
-    margin:12px 0;
+.product-info { padding: 20px; }
+
+.product-info h3 {
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+
+  font-weight: normal;
+
 }
 
-.banner p{
-    letter-spacing:4px;
-    font-size:11px;
-    margin-bottom:30px;
+.product-info p { color: var(--muted); font-size: 12px; margin-top: 8px; }
+
+.price-row {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
 }
 
-/* CATEGORIES */
+.price { font-weight: bold; font-size: 19px; }
 
-.categories{
-    padding:75px 6%;
-    background:#05090d;
+.order-btn {
+
+  background: var(--black);
+
+  color: white;
+
+  padding: 11px 13px;
+
+  font-size: 11px;
+
+  border: none;
+
+  cursor: pointer;
+
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
+.order-btn:hover { background: #27784a; }
+
+.shipping {
+
+  margin: 10px 7% 70px;
+
+  padding: 40px 20px;
+
+  background: #eae3d5;
+
+  text-align: center;
+
 }
 
-.section-title span{
-    color:#65d1ff;
-    letter-spacing:4px;
-    font-size:11px;
+.shipping h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+
+  font-weight: normal;
+
+  margin-bottom: 12px;
+
 }
 
-.section-title h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:48px;
-    font-weight:500;
-    margin-top:10px;
+.shipping p { color: #625d53; font-size: 14px; line-height: 1.8; }
+
+footer {
+
+  padding: 40px 7%;
+
+  background: var(--black);
+
+  color: white;
+
+  text-align: center;
+
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+footer .logo { margin-bottom: 15px; }
+
+footer p { color: #c6c1b7; font-size: 12px; line-height: 2; }
+
+.social { margin-top: 18px; color: #e2d0a5; font-size: 13px; }
+
+.whatsapp {
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 22px;
+
+  z-index: 10;
+
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: #25d366;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: 0 4px 18px #0003;
+
+  transition: transform .2s;
+
 }
 
-.card{
-    min-height:350px;
-    position:relative;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:12px;
-    background-size:cover;
-    background-position:center;
+.whatsapp:hover { transform: scale(1.08); }
+
+.whatsapp svg { width: 31px; height: 31px; fill: white; }
+
+@media (max-width: 750px) {
+
+  header { padding: 16px 5%; flex-wrap: wrap; }
+
+  nav { gap: 15px; font-size: 12px; }
+
+  .hero { grid-template-columns: 1fr; padding: 50px 6%; }
+
+  .hero-art { min-height: 190px; }
+
+  .benefit { font-size: 10px; padding: 18px 5px; }
+
+  .benefit strong { font-size: 11px; }
+
+  section.products { padding: 55px 5%; }
+
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+  .product-image { height: 170px; }
+
+  .product-info { padding: 13px; }
+
+  .product-info h3 { font-size: 17px; }
+
+  .price-row { align-items: flex-start; flex-direction: column; }
+
+  .order-btn { width: 100%; }
+
+  .shipping { margin: 0 5% 45px; }
+
 }
 
-.card:first-child{
-    background-image:
-    linear-gradient(0deg,rgba(0,0,0,.9),transparent 60%),
-    url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85');
+@media (max-width: 380px) {
+
+  .product-grid { grid-template-columns: 1fr; }
+
+  nav { gap: 10px; }
+
 }
 
-.card:last-child{
-    background-image:
-    linear-gradient(0deg,rgba(0,0,0,.9),transparent 60%),
-    url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=85');
-}
-
-.card-content{
-    position:absolute;
-    left:28px;
-    right:28px;
-    bottom:25px;
-}
-
-.card-icon{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.card h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:27px;
-    font-weight:500;
-}
-
-.card p{
-    color:#bbb;
-    font-size:12px;
-    margin-top:5px;
-}
-
-.card-arrow{
-    position:absolute;
-    right:0;
-    bottom:0;
-    width:38px;
-    height:38px;
-    border:1px solid #65d1ff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#65d1ff;
-}
-
-/* ABOUT */
-
-.about{
-    padding:70px 8%;
-    background:
-    linear-gradient(90deg,rgba(2,9,14,.92),rgba(2,9,14,.65)),
-    url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=80')
-    center/cover;
-    display:grid;
-    grid-template-columns:1fr 1.5fr;
-    gap:50px;
-    align-items:center;
-}
-
-.about-logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:70px;
-}
-
-.about-logo small{
-    display:block;
-    font-family:'Montserrat',sans-serif;
-    font-size:11px;
-    letter-spacing:5px;
-    color:#ccc;
-    margin-top:10px;
-}
-
-.about-text{
-    border-left:1px solid rgba(255,255,255,.3);
-    padding-left:40px;
-}
-
-.about-text p{
-    color:#ccc;
-    line-height:1.9;
-    font-size:14px;
-    margin-bottom:25px;
-}
-
-/* FEATURES */
-
-.features{
-    padding:35px 6%;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-bottom:1px solid rgba(255,255,255,.15);
-}
-
-.feature{
-    text-align:center;
-    padding:15px;
-    border-right:1px solid rgba(255,255,255,.15);
-}
-
-.feature:last-child{
-    border-right:none;
-}
-
-.feature-icon{
-    font-size:28px;
-    color:#65d1ff;
-    margin-bottom:10px;
-}
-
-.feature h4{
-    font-size:13px;
-    margin-bottom:5px;
-}
-
-.feature p{
-    font-size:10px;
-    color:#888;
-}
-
-/* CONTACT */
-
-.contact{
-    padding:45px 6%;
-}
-
-.contact-title{
-    text-align:center;
-    letter-spacing:5px;
-    font-size:11px;
-    color:#aaa;
-    margin-bottom:30px;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-.contact-item{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:15px 20px;
-    border-right:1px solid rgba(255,255,255,.15);
-}
-
-.contact-item:last-child{
-    border:none;
-}
-
-.contact-icon{
-    font-size:25px;
-    color:#65d1ff;
-}
-
-.contact-item h4{
-    font-size:12px;
-    margin-bottom:5px;
-}
-
-.contact-item p{
-    font-size:11px;
-    color:#999;
-}
-
-/* FOOTER */
-
-footer{
-    border-top:1px solid rgba(255,255,255,.15);
-    padding:25px 6%;
-    display:flex;
-    justify-content:space-between;
-    color:#777;
-    font-size:10px;
-}
-
-.footer-logo{
-    color:white;
-    font-family:'Cormorant Garamond',serif;
-    font-size:28px;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-    width:58px;
-    height:58px;
-    background:#25D366;
-    color:white;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    box-shadow:0 0 25px rgba(37,211,102,.5);
-    z-index:100;
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    header{
-        height:78px;
-        padding:0 22px;
-    }
-
-    .logo h1{
-        font-size:38px;
-    }
-
-    .header-right{
-        gap:14px;
-        font-size:21px;
-    }
-
-    .hero{
-        min-height:470px;
-        padding:45px 25px;
-        background-position:center;
-    }
-
-    .hero h2{
-        font-size:48px;
-    }
-
-    .hero p{
-        font-size:9px;
-        letter-spacing:3px;
-    }
-
-    .banner{
-        min-height:350px;
-        padding:40px 25px;
-    }
-
-    .banner-content{
-        max-width:300px;
-    }
-
-    .banner h2{
-        font-size:40px;
-    }
-
-    .categories{
-        padding:55px 18px;
-    }
-
-    .section-title h2{
-        font-size:40px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .card{
-        min-height:300px;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-        padding:55px 25px;
-        gap:30px;
-    }
-
-    .about-logo{
-        font-size:58px;
-    }
-
-    .about-text{
-        border-left:none;
-        border-top:1px solid rgba(255,255,255,.3);
-        padding:25px 0 0;
-    }
-
-    .features{
-        grid-template-columns:1fr 1fr;
-        padding:20px 10px;
-    }
-
-    .feature{
-        border-right:1px solid rgba(255,255,255,.15);
-        border-bottom:1px solid rgba(255,255,255,.15);
-    }
-
-    .contact-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .contact-item{
-        padding:18px 10px;
-        border-bottom:1px solid rgba(255,255,255,.15);
-    }
-
-    .contact-item:nth-child(2){
-        border-right:none;
-    }
-
-    footer{
-        flex-direction:column;
-        gap:12px;
-        text-align:center;
-    }
-}
 </style>
+
 </head>
 
 <body>
 
+<div class="topbar">LIVRAISON GRATUITE PARTOUT AU MAROC</div>
+
 <header>
 
-    <div class="menu">☰</div>
+  <a class="logo" href="#">US<span>S</span>ECOOM</a>
 
-    <div class="logo">
-        <span class="logo-crown">♛</span>
-        <h1>USM</h1>
-        <div class="logo-line"></div>
-    </div>
+  <nav>
 
-    <div class="header-right">
-        <span>⌕</span>
-        <span>♧</span>
-    </div>
+    <a href="#accueil">Accueil</a>
+
+    <a href="#collection">Collection</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
 
 </header>
 
+<main>
 
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="small-title">USM</div>
-
-        <h2>Montres Homme</h2>
-
-        <p>ÉLÉGANCE • PRÉCISION • STYLE</p>
-
-        <a href="#categories" class="btn">
-            DÉCOUVRIR →
-        </a>
-
-        <div class="dots">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="banner">
-
-    <div class="banner-content">
-
-        <div class="small-title">USM</div>
-
-        <h2>Accessoires Femmes</h2>
-
-        <p>ÉLÉGANCE • FÉMINITÉ • DÉTAILS</p>
-
-        <a href="#categories" class="btn">
-            DÉCOUVRIR →
-        </a>
-
-    </div>
-
-</section>
-
-
-<section class="categories" id="categories">
-
-    <div class="section-title">
-        <span>CATÉGORIES</span>
-        <h2>— &nbsp; Nos Catégories &nbsp; —</h2>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="card-content">
-
-                <div class="card-icon">⌚</div>
-
-                <h3>Montres Hommes</h3>
-
-                <p>Voir tout →</p>
-
-                <div class="card-arrow">→</div>
-
-            </div>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-content">
-
-                <div class="card-icon">◇</div>
-
-                <h3>Accessoires Femmes</h3>
-
-                <p>Voir tout →</p>
-
-                <div class="card-arrow">→</div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="about">
+  <section class="hero" id="accueil">
 
     <div>
 
-        <div class="about-logo">
-            ♛<br>USM
+      <div class="eyebrow">L'élégance au quotidien</div>
 
-            <small>
-                PLUS QU'UN STYLE,<br>
-                UNE IDENTITÉ.
-            </small>
-        </div>
+      <h1>Le temps mérite<br>un style <em>unique.</em></h1>
 
-    </div>
+      <p>Découvrez notre sélection de montres au design élégant. Un style remarquable, un prix accessible et une livraison gratuite partout au Maroc.</p>
 
-
-    <div class="about-text">
-
-        <p>
-            USM est une marque qui incarne l'élégance,
-            la qualité et le style moderne.
-            Nous sélectionnons pour vous des pièces
-            uniques, pensées pour ceux qui aiment
-            se démarquer au quotidien.
-        </p>
-
-        <a href="#" class="btn">
-            EN SAVOIR PLUS →
-        </a>
+      <a class="btn" href="#collection">DÉCOUVRIR LA COLLECTION &rarr;</a>
 
     </div>
 
-</section>
+    <div class="hero-art">
 
+      <div class="monogram">US</div>
 
-<section class="features">
-
-    <div class="feature">
-        <div class="feature-icon">♢</div>
-        <h4>Produits de qualité</h4>
-        <p>Sélectionnés avec soin</p>
     </div>
 
-    <div class="feature">
-        <div class="feature-icon">▣</div>
-        <h4>Livraison rapide</h4>
-        <p>Partout au Maroc</p>
+  </section>
+
+  <div class="benefits">
+
+    <div class="benefit"><strong>✦ Sélection élégante</strong>Un style pour chaque occasion</div>
+
+    <div class="benefit"><strong>✦ 199 DH</strong>Prix affiché par montre</div>
+
+    <div class="benefit"><strong>✦ Livraison gratuite</strong>Partout au Maroc</div>
+
+  </div>
+
+  <section class="products" id="collection">
+
+    <div class="section-head">
+
+      <div class="eyebrow">Notre sélection</div>
+
+      <h2>La collection USSECOOM</h2>
+
+      <p>Choisissez votre style et commandez directement sur WhatsApp.</p>
+
     </div>
 
-    <div class="feature">
-        <div class="feature-icon">♧</div>
-        <h4>Service client</h4>
-        <p>Toujours à votre écoute</p>
-    </div>
+    <div class="product-grid">
 
-    <div class="feature">
-        <div class="feature-icon">♙</div>
-        <h4>Paiement sécurisé</h4>
-        <p>100% fiable</p>
-    </div>
+      <article class="product-card">
 
-</section>
+        <div class="product-image">
 
-
-<section class="contact">
-
-    <div class="contact-title">
-        CONTACT
-    </div>
-
-    <div class="contact-grid">
-
-
-        <a class="contact-item" href="#">
-            <div class="contact-icon">◎</div>
-            <div>
-                <h4>Instagram</h4>
-                <p>@usm.officiel</p>
-            </div>
-        </a>
-
-
-        <a class="contact-item"
-           href="https://wa.me/212601109225"
-           target="_blank">
-
-            <div class="contact-icon">◉</div>
-
-            <div>
-                <h4>WhatsApp</h4>
-                <p>+212 601 109 225</p>
-            </div>
-
-        </a>
-
-
-        <a class="contact-item"
-           href="mailto:usm@email.com">
-
-            <div class="contact-icon">✉</div>
-
-            <div>
-                <h4>Email</h4>
-                <p>usm@email.com</p>
-            </div>
-
-        </a>
-
-
-        <div class="contact-item">
-
-            <div class="contact-icon">⌖</div>
-
-            <div>
-                <h4>Localisation</h4>
-                <p>Agadir, Maroc</p>
-            </div>
+          <div class="image-placeholder"><span>◷</span>Votre photo de montre 01</div>
 
         </div>
 
+        <div class="product-info">
+
+          <h3>Casio Argentée</h3>
+
+          <p>Élégance classique · Cadran clair</p>
+
+          <div class="price-row">
+
+            <span class="price">199 DH</span>
+
+            <button class="order-btn" onclick="order('Casio Argentée')">COMMANDER</button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <div class="image-placeholder"><span>◷</span>Votre photo de montre 02</div>
+
+        </div>
+
+        <div class="product-info">
+
+          <h3>Casio Noire</h3>
+
+          <p>Style moderne · Finition noire</p>
+
+          <div class="price-row">
+
+            <span class="price">199 DH</span>
+
+            <button class="order-btn" onclick="order('Casio Noire')">COMMANDER</button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <div class="image-placeholder"><span>◷</span>Votre photo de montre 03</div>
+
+        </div>
+
+        <div class="product-info">
+
+          <h3>Montre Cadran Bleu</h3>
+
+          <p>Un design élégant et intemporel</p>
+
+          <div class="price-row">
+
+            <span class="price">199 DH</span>
+
+            <button class="order-btn" onclick="order('Montre Cadran Bleu')">COMMANDER</button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <div class="image-placeholder"><span>◷</span>Votre photo de montre 04</div>
+
+        </div>
+
+        <div class="product-info">
+
+          <h3>Edifice Turquoise</h3>
+
+          <p>Une touche de couleur distinctive</p>
+
+          <div class="price-row">
+
+            <span class="price">199 DH</span>
+
+            <button class="order-btn" onclick="order('Edifice Turquoise')">COMMANDER</button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <div class="image-placeholder"><span>◷</span>Votre photo de montre 05</div>
+
+        </div>
+
+        <div class="product-info">
+
+          <h3>Montre Argentée</h3>
+
+          <p>Un look raffiné pour tous les jours</p>
+
+          <div class="price-row">
+
+            <span class="price">199 DH</span>
+
+            <button class="order-btn" onclick="order('Montre Argentée')">COMMANDER</button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <div class="image-placeholder"><span>◷</span>Votre photo de montre 06</div>
+
+        </div>
+
+        <div class="product-info">
+
+          <h3>Collection Signature</h3>
+
+          <p>Trouvez la montre qui vous ressemble</p>
+
+          <div class="price-row">
+
+            <span class="price">199 DH</span>
+
+            <button class="order-btn" onclick="order('Collection Signature')">COMMANDER</button>
+
+          </div>
+
+        </div>
+
+      </article>
 
     </div>
 
-</section>
+  </section>
 
+  <section class="shipping">
 
-<footer>
+    <h2>Votre style, livré chez vous.</h2>
 
-    <div class="footer-logo">USM</div>
+    <p>Profitez de la livraison gratuite partout au Maroc.<br>Pour commander, cliquez sur le bouton WhatsApp et contactez-nous directement.</p>
 
-    <div>
-        © 2026 USM. Tous droits réservés.
-    </div>
+    <a class="btn" href="https://wa.me/212601109225" target="_blank" rel="noopener">CONTACTER USSECOOM</a>
 
-    <div>
-        Mentions légales &nbsp; | &nbsp;
-        Politique de confidentialité
-    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+
+  <div class="logo">US<span>S</span>ECOOM</div>
+
+  <p>L'élégance au quotidien.</p>
+
+  <p>Livraison gratuite partout au Maroc · Montres à 199 DH</p>
+
+  <div class="social">
+
+    <a href="https://www.instagram.com/oussama_oulah/" target="_blank" rel="noopener">Instagram</a>
+
+    &nbsp; · &nbsp;
+
+    <a href="mailto:oussamaaacoom@gmail.com">Email</a>
+
+  </div>
+
+  <p style="margin-top:20px">© 2026 USSECOOM. Tous droits réservés.</p>
 
 </footer>
 
+<a class="whatsapp" href="https://wa.me/212601109225" target="_blank" rel="noopener" aria-label="Contacter USSECOOM sur WhatsApp">
 
-<a class="whatsapp"
-   href="https://wa.me/212601109225"
-   target="_blank">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path fill="white" d="M12 2C6.48 2 2 6.48 2 12c0 1.76.46 3.41 1.27 4.86L2 22l5.3-1.23A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.55 0-3.05-.4-4.37-1.15l-.31-.18-3.15.73.76-3.07-.2-.32A7.96 7.96 0 1 1 12 20zm4.37-5.98c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.11.15 1.53.09.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
-</svg>
-    <a class="whatsapp"
-   href="https://wa.me/212601109225"
-   target="_blank">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-  <path d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.8L0 24l6.5-1.7c1.7.9 3.6 1.4 5.6 1.4h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.1-3.6-8.3zm-8.4 18.2h-.1c-1.8 0-3.6-.5-5.1-1.3l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2 6.5 6.5 2 12.1 2c2.7 0 5.2 1.1 7.1 3s2.9 4.4 2.9 7.1c0 5.6-4.5 10.1-10 10.1zm5.5-7.5c-.3-.1-1.7-.8-2- .9-.3-.1-.5-.1-.7.2-.2.3-.8.9-1 .9-.2.1-.4 0-.7-.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.1-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.8 4.3.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.3z"/>
-</svg>
-</a>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+
+    <path d="M16 .8A15 15 0 0 0 3.1 23.5L1 31l7.7-2A15.1 15.1 0 1 0 16 .8zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.4 12.4 0 1 1 16 28.3zm6.8-9.3c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.3-.5.3-.9.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.3 6.8 6 .9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.8-.5z"/>
+
+  </svg>
+
 </a>
 
+<script>
+
+function order(product) {
+
+  const message = "Bonjour USSECOOM, je souhaite commander : " + product +
+
+    " à 199 DH. La livraison est-elle gratuite dans ma ville ?";
+
+  window.open("https://wa.me/212601109225?text=" + encodeURIComponent(message), "_blank");
+
+}
+
+</script>
 
 </body>
+
 </html>
